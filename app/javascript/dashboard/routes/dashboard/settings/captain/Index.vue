@@ -59,34 +59,13 @@ const featureToggles = computed(() => [
   },
 ]);
 
-const shouldShowFeature = feature => {
-  // Cloud will always see these features as long as captain is enabled
-  if (isOnChatwootCloud.value && captainEnabled) {
-    return true;
-  }
-
-  if (feature.enterprise) {
-    // if the app is in enterprise mode, then we can show the feature
-    // this is not the installation plan, but when the enterprise folder is missing
-    return isEnterprise;
-  }
-
+const shouldShowFeature = () => {
+  // White-label: always show all features
   return true;
 };
 
-const isFeatureAccessible = feature => {
-  // Cloud will always see these features as long as captain is enabled
-  if (isOnChatwootCloud.value && captainEnabled) {
-    return true;
-  }
-
-  if (feature.enterprise) {
-    // plan is shown, but is it accessible?
-    // This ensures that the instance has purchased the enterprise license, and only then we allow
-    // access
-    return isEnterprise && enterprisePlanName === 'enterprise';
-  }
-
+const isFeatureAccessible = () => {
+  // White-label: all features accessible
   return true;
 };
 

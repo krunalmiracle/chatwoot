@@ -182,23 +182,7 @@ const handleToggleWidget = () => {
               :config="getWidgetConfig"
             />
             <WidgetFooter :config="getWidgetConfig" />
-            <div class="py-2.5 flex justify-center">
-              <a
-                class="items-center gap-0.5 text-n-slate-11 cursor-pointer flex filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 text-xxs"
-              >
-                <img
-                  class="max-w-2.5 max-h-2.5"
-                  :src="globalConfig.logoThumbnail"
-                />
-                <span>
-                  {{
-                    replaceInstallationName(
-                      $t('INBOX_MGMT.WIDGET_BUILDER.BRANDING_TEXT')
-                    )
-                  }}
-                </span>
-              </a>
-            </div>
+            <div class="py-2.5" />
           </div>
         </div>
 
@@ -243,7 +227,7 @@ const handleToggleWidget = () => {
           :script="widgetScript"
           lang="html"
           class="!text-start"
-          :codepen-title="`${websiteName} - Chatwoot Widget Test`"
+          :codepen-title="`${websiteName} - Widget Test`"
           enable-code-pen
         />
       </div>

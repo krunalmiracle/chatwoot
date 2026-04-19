@@ -2,7 +2,7 @@ module Enterprise::SuperAdmin::AppConfigsController
   private
 
   def allowed_configs
-    return super if ChatwootHub.pricing_plan == 'community'
+    # White-label: always allow all config sections
 
     case @config
     when 'custom_branding'
